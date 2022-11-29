@@ -2325,22 +2325,16 @@ https://xhtml2pdf.readthedocs.io/en/latest/reference.html#supported-css-properti
 <hr>
 </div>
 <script>
-
-for (var i = 0; i < document.getElementsByClassName("answer")['length']; i++){
-    console.log(document.getElementsByClassName("answer")[i])
-    document.getElementsByClassName("answer")[i].innerHTML = `<button class="accordion">Mostrar resposta</button>
-<div style="display:none;" class="panel">
-  <p>${document.getElementsByClassName("answer")[i].innerHTML}</p>
-</div>`
-
-}
-
 var acc = document.getElementsByClassName("accordion");
 var i;
 
 for (i = 0; i < acc.length; i++) {
   acc[i].addEventListener("click", function() {
+    /* Toggle between adding and removing the "active" class,
+    to highlight the button that controls the panel */
     this.classList.toggle("active");
+
+    /* Toggle between hiding and showing the active panel */
     var panel = this.nextElementSibling;
     if (panel.style.display === "block") {
       panel.style.display = "none";
@@ -2350,5 +2344,4 @@ for (i = 0; i < acc.length; i++) {
   });
 }
 </script>
-
 </h3></body></html>
